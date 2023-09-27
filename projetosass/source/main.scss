@@ -1,10 +1,17 @@
-@use './config/reset.scss';
+@use './config/reset';
+@use './config/variaveis';
+@use 'sass:math';
 
 @mixin elementoForm($margin: 16px) {
   padding: 8px;
   display: block;
   width: 100%;
   margin-bottom: $margin;
+}
+
+/*Função SASS convert PX for EM */
+@function pixelForEM($salvoPx, $paiPx: 16px){
+  @return math.div($salvoPx, $paiPx)+em;
 }
 
 
@@ -20,7 +27,8 @@ body {
 
 header {
   padding: 16px 0;
-  background-color: yellow;
+  background-color: variaveis.$corPrincipal;
+  color: #fff;
   text-align: center;
 }
 
@@ -30,20 +38,53 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  max-width: 760px;
+
+  h2 {
+    font-size: pixelForEM(48px);
+    text-align: center;
+  }
 
   form {
     width: 100%;
     max-width: 420px;
     margin-top: 40px;
+
+    label{
+      font-weight: bold;
+      cursor: pointer;
+    }
+
     input {
       @include elementoForm();
       background-color: transparent;
       border: none;
-      border-bottom: 1px solid black;
+      border-bottom: 2px solid variaveis.$corPrincipal;
     }
     button {
       @include elementoForm();
+      background-color: variaveis.$corSecundaria;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      color: #fff;
+
+      &:hover{
+        background-color: darken(variaveis.$corSecundaria, 15%);
+      }
     }    
   }
 }
 
+@media screen and (max-width: variaveis.$mobile) {
+  .container {
+    max-width: 80%;
+  }
+}
+//comentarios
+/* as unidades em dependem sempre do tamanho da fonte do elemento pai
+  medidaAlvo / medidaAtualdoContexto
+  32 / 16 = 2em
+  32px é o que eu quero, 16px é o tamanho da font do elemento pai. 
+*/
