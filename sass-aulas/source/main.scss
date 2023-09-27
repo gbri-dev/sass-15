@@ -1,44 +1,5 @@
-$variavelCor: #eee;
-$corDoTexto: #111;
+@use './config/reset';
+@use './config/cores';
+@use './secoes/secoes';
 
-$corSecundaria: rgb(75, 128, 119);
-$corPrincipal: rgb(153, 199, 184);
 
-body {
-  background-color: rgb(55, 189, 241);
-  color: #fff;
-  text-align: center;
-  padding: 10;
-}
-
-header {
-  background-color: $variavelCor;
-  h1 {
-    padding: 5;
-    color: red;    
-  }
-  p {
-    color: $corDoTexto;
-  }
-}
-
-button{
-  padding: 16px;
-  background-color: $corSecundaria;
-  color: $corPrincipal;
-
-  &:hover{
-    border: none;
-    background-color: white;
-    color: $corDoTexto;
-  }
-  &.success{
-    background-color: green;
-    color: white;
-  }
-  &.success:hover{
-    border: none;
-    background-color: white;
-    color: $corDoTexto;
-  }
-}

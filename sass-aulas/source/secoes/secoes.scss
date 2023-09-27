@@ -1,0 +1,31 @@
+@use '../config/cores';
+
+section {
+  background-color: cores.$corFundo;
+}
+
+.produtos {
+  font-family: monospace;  
+  color: cores.$corPrincipal;
+}
+
+button{
+  padding: 16px;
+  background-color: cores.$corFundo;
+  color: cores.$corPrincipal;
+  font-weight: bold;
+  &:hover{
+    border: none;
+    background-color: cores.$corPrincipal;
+    color: cores.$corSecundaria;
+  }
+  &.success{
+    background-color: cores.$corFundo;
+    color: cores.$corPrincipal;
+  }
+  &.success:hover{
+    border: none;
+    color: cores.$corSecundaria;
+    background-color: cores.$corPrincipal;
+  }
+}
