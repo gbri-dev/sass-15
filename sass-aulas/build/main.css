@@ -1,0 +1,39 @@
+body {
+  background-color: rgb(55, 189, 241);
+  color: #fff;
+  text-align: center;
+  padding: 10;
+}
+
+header {
+  background-color: #eee;
+}
+header h1 {
+  padding: 5;
+  color: red;
+}
+header p {
+  color: #111;
+}
+
+button {
+  padding: 16px;
+  background-color: rgb(75, 128, 119);
+  color: rgb(153, 199, 184);
+}
+button:hover {
+  border: none;
+  background-color: white;
+  color: #111;
+}
+button.success {
+  background-color: green;
+  color: white;
+}
+button.success:hover {
+  border: none;
+  background-color: white;
+  color: #111;
+}
+
+/*# sourceMappingURL=main.css.map */
